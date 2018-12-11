@@ -56,7 +56,7 @@ chmod u+x install-prereqs.sh
 ./install-prereqs.sh
 ```
 
-log out
+log out  
 log back in
 
 ---
@@ -81,7 +81,7 @@ sudo service nginx reload
 ```
 ---
 ## Composer Playground 🐌
-composer-playground.mybluemix.net
+composer-playground.mybluemix.net  
 export bna file
 
 ---
@@ -93,7 +93,7 @@ Create a storage bucket
 
 upload my-basic-sample.bna file to bucket
 ```
-gsutil cp gs://nobul-hlf-artifacts-test/my-basic-sample.bna .
+gsutil cp gs://my-bucket/my-basic-sample.bna .
 ```
 
 ---
