@@ -1,7 +1,7 @@
 
 
 # Hyperledger Composer + Fabric Demo
-create a back-end hyperledger server
+create a _live_ back-end hyperledger server
 
 ---
 _“Only those who have the patience to do simple things perfectly will we acquire the skill to do difficult things easily” - Friedrich Schiller_
