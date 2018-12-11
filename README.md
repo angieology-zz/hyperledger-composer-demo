@@ -1,15 +1,26 @@
 
+
 # Hyperledger Composer + Fabric Demo
+create a back-end hyperledger server
 
 ---
 _“Only those who have the patience to do simple things perfectly will we acquire the skill to do difficult things easily” - Friedrich Schiller_
 
 ---
+## What we are making 🐙
 
-## Steps 🐝
+- one organization node
+- one admin user
+- sample assets, participants, transactions
+- REST API server
+
+---
+
+## Outline 🐝
 
 - Set up google compute engine
-- Install prerequisites
+- install prerequisites
+- nginx for browser access
 - start fabric network
 - create business logic with composer
 - install composer logic to network
@@ -49,7 +60,27 @@ log out
 log back in
 
 ---
-# Composer Playground
+## reverse proxy for browser access 🦔
+```
+# install nginx
+sudo apt-get update
+sudo apt-get install nginx
+
+sudo vim /etc/nginx/sites-available/default
+```
+change location setting to:
+```
+location / {
+	# comment comment    
+	proxy_pass http://localhost:3000/;
+}
+```
+reload
+```
+sudo service nginx reload
+```
+---
+## Composer Playground 🐌
 composer-playground.mybluemix.net
 export bna file
 
@@ -66,7 +97,7 @@ gsutil cp gs://nobul-hlf-artifacts-test/my-basic-sample.bna .
 ```
 
 ---
-# start Fabric
+## start Fabric 🐛
 ```
 cd ~/fabric-dev-servers
 
@@ -82,7 +113,7 @@ export FABRIC_VERSION=hlfv11
 
 ---
 
-# start Composer network
+## start Composer network 🐳
 ```
 cd ~/hyperledger-demo
 
@@ -102,7 +133,7 @@ composer network start
 
 ---
 
-# add card to network
+## add card to network
 card is the bundle of our custom code
 ```
 composer card import --file networkadmin.card
@@ -110,14 +141,24 @@ composer card import --file networkadmin.card
 # test card is properly installed
 composer network ping --card admin@my-basic-sample
 ```
+
 ---
-# start composer rest API
+## start composer rest API 🍀
 ```
-composer-rest-server 
-	-c admin@my-basic-sample
-	-n always 
-	-u true 
-	-w true
+composer-rest-server -c admin@my-basic-sample
 ```
 
 Composer Rest Server is now running on port 3000
+
+---
+## Open in browser 🐠
+
+navigate to your VM's IP on port 3000/explorer
+
+ie. http://35.196.232.33/explorer/
+*http not https
+
+try any sample transaction
+
+see logs in console
+   
