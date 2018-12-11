@@ -93,6 +93,7 @@ Create a storage bucket
 
 upload my-basic-sample.bna file to bucket
 ```
+cd ~/hyperledger-demo
 gsutil cp gs://my-bucket/my-basic-sample.bna .
 ```
 
